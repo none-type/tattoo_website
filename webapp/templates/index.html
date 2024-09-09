@@ -55,14 +55,32 @@
 		</div>
 		<div class="box2">
 			<div class="profile-image">
-				<img src="placeholder_images/1920_1080.png" alt="no image">
+			    {% if profile %}
+			        <img src="{{ profile.image.url }}" alt="Profile Image">
+			    {% else %}
+			        <img src="{% static 'images/default.png' %}" alt="No image available">
+			    {% endif %}
 			</div>
+
 		</div>
+	
+
 		<div class="box3">
-			<div class="video-box">
-				<img src="placeholder_images/1920_1080.png" alt="no image">
-			</div>
+		    <div class="video-box">
+		        {% if profile_video and profile_video.video %}
+		            <video autoplay loop muted>
+		                <source src="{{ profile_video.video.url }}" type="video/mp4">
+		                Your browser does not support the video tag.
+		            </video>
+		        {% else %}
+		            <video autoplay loop muted>
+		                <source src="{% static 'videos/default.mp4' %}" type="video/mp4">
+		                Your browser does not support the video tag.
+		            </video>
+		        {% endif %}
+		    </div>
 		</div>
+
 		<div class="box4" id="services">
 			<h1 class="centered-text">
 			Services
@@ -103,6 +121,11 @@
 		<div class="contact-section" id="contact">
 			<div class="centered-text">
 				contact info
+			</div>
+			<div class="contact-text">
+				<p>email address</p>
+				<br>
+				<p>social media</p>
 			</div>
 		</div>
 	</div>
