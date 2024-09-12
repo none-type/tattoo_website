@@ -1,355 +1,384 @@
-		
-		*,
-		*::before,
-		*::after {
-			/* important reset , makes sure all of our elements get the reset */
-			box-sizing: border-box; /* calculates width, height inc padding and border */
-		}
+*,
+*::before,
+*::after {
+    /* Reset all elements to have border-box sizing */
+    box-sizing: border-box; /* Includes padding and border in the width and height */
+}
+
+* {
+    /* Universal selector, applies styles globally */
+    padding: 0; /* Removes default padding from all elements */
+    margin: 0; /* Removes default margin from all elements */
+    font-size: 40px; /* Sets default font size for all text */
+    font-family: "Lobster", sans-serif; /* Sets default font family */
+    box-sizing: border-box; /* Ensures box-sizing applies globally */
+    text-decoration: none; /* Removes underlines from all links */
+}
+
+body {
+    /* Body-specific overrides */
+    width: 100%; /* Makes body fill the full width of the viewport */
+    height: auto; /* Lets the height adjust based on content */
+}
+
+html {
+    /* Smooth scrolling when using anchors */
+    scroll-behavior: smooth; /* Enables smooth scroll for in-page links */
+}
+
+.navbar {
+    position: fixed; /* Fixes navbar to the top of the screen */
+    background-color: rgba(0, 71, 240, 0.5); /* Semi-transparent background */
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(152, 251, 152, 0.5)); /* Gradient effect */
+    backdrop-filter: blur(5px); /* Adds a blur effect to background */
+    display: flex; /* Flexbox for aligning items inside the navbar */
+    padding: 5px; /* Padding inside the navbar */
+    z-index: 1000; /* Ensures the navbar is above other elements */
+    width: 100vw; /* Full viewport width */
+    height: 90px; /* Fixed height for the navbar */
+    align-items: center; /* Vertically centers the navbar items */
+}
+
+.name-head {
+    white-space: nowrap; /* Prevents the text from wrapping */
+    margin: 0px; /* Removes margins */
+    margin-left: 5%; /* Adds space to the left of the text */
+    color: white; /* White text color */
+    width: 200px; /* Fixed width */
+    height: 50px; /* Fixed height */
+}
+
+.nav-list {
+    display: flex; /* Flexbox to align items horizontally */
+    justify-content: flex-start; /* Aligns items to the left */
+    list-style: none; /* Removes default bullet points from list */
+    margin-left: 150px; /* Adds space to the left of the list */
+    align-items: center; /* Centers items vertically */
+}
+
+.nav-item a:hover {
+    color: red; /* Changes link color on hover */
+    opacity: 0.7; /* Adds opacity on hover */
+    cursor: pointer; /* Changes the cursor to a pointer */
+}
+
+.nav-item a {
+    margin-right: 20px; /* Adds space between nav items */
+    margin-left: 20px;
+    color: white; /* White text color */
+    font-size: 20px; /* Font size for links */
+    transition: color 0.5s ease, opacity 0.5s ease; /* Smooth transition for hover effects */
+}
+
+.nav-item {
+    font-size: 20px; /* Font size for nav item text */
+    color: white; /* White text color */
+}
+
+.container-section {
+    height: auto; /* Adjust height based on content */
+    min-height: 100vh; /* Ensures section fills the full viewport height */
+    position: relative; /* Allows absolute positioning of child elements */
+    display: flex; /* Flexbox layout */
+    justify-content: space-evenly; /* Evenly distributes space between items */
+    align-content: space-evenly; /* Aligns items evenly */
+    flex-direction: row; /* Aligns items in a row */
+    background-color: white; /* White background */
+    margin: 0px; /* Removes default margin */
+    width: 100%; /* Full width */
+    flex-wrap: wrap; /* Wraps items onto a new line if necessary */
+    top: 90px; /* Pushes section down below navbar */
+    padding-top: 100px; /* Adds space at the top of the section */
+}
+
+.box1 {
+    width: 770px; /* Fixed width */
+    height: 500px; /* Fixed height */
+    background-color: white; /* White background */
+    border-radius: 6px; /* Rounded corners */
+    text-align: center; /* Centers text horizontally */
+    padding: 10px; /* Padding inside the box */
+}
+
+.box1 p {
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    overflow: hidden; /* Hides overflow text */
+}
+
+.profile-text {
+    font-size: 5px; /* Small font size */
+    text-align: center; /* Centers text */
+    padding: 10px; /* Padding inside the text container */
+    min-width: 200px; /* Minimum width for the text block */
+}
+
+.box2 {
+    background-color: gray; /* Gray background */
+    width: 770px; /* Fixed width */
+    height: 500px; /* Fixed height */
+    border-radius: 0px; /* No border radius */
+    padding: 0px; /* No padding */
+}
+
+.profile-image {
+    width: 770px; /* Full width */
+    height: 500px; /* Full height */
+    padding: 0px; /* No padding */
+    margin: 0px; /* No margin */
+    position: relative; /* Relative positioning for child elements */
+    box-sizing: border-box; /* Include padding in width and height */
+    align-content: center; /* Center content */
+    text-align: center; /* Center text */
+}
+
+.profile-image img {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Ensures image covers the container */
+    display: block; /* Prevents extra space below the image */
+    margin: 0; /* No margin */
+    align-content: center; /* Centers content */
+}
+
+.centered-text {
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Centers items horizontally */
+    align-items: flex-start; /* Aligns items at the top */
+    height: 10%; /* Set height relative to parent */
+    text-align: center; /* Center text horizontally */
+    font-size: 30px; /* Font size */
+    color: black; /* Black text color */
+}
+
+p.profile-paragraph {
+    justify-content: center; /* Vertically centers text */
+    text-align: center; /* Centers text horizontally */
+    font-size: 20px; /* Font size */
+    font-family: sans-serif; /* Font style */
+    border-top: solid 1px black; /* Top border */
+    border-bottom: solid 1px black; /* Bottom border */
+    padding: 5px; /* Padding inside the paragraph */
+}
+
+p.services-paragraph {
+    align-items: flex-start; /* Aligns items at the top */
+    justify-content: center; /* Centers items vertically */
+    font-size: 20px; /* Font size */
+    font-family: sans-serif; /* Font style */
+    border-top: solid 1px black; /* Top border */
+    border-bottom: solid 1px black; /* Bottom border */
+    padding: 5px; /* Padding inside the paragraph */
+}
+
+.box3 {
+    background-color: gray; /* Gray background */
+    width: 770px; /* Fixed width */
+    height: 500px; /* Fixed height */
+    border-radius: 0px; /* No border radius */
+    padding: 0px; /* No padding */
+    margin: 0px; /* No margin */
+}
+
+.box4 {
+    background-color: white; /* White background */
+    width: 770px; /* Fixed width */
+    height: 500px; /* Fixed height */
+    border-radius: 6px; /* Rounded corners */
+    padding: 10px; /* Padding inside the box */
+    text-align: center; /* Centers text horizontally */
+}
+
+.contact-section {
+    position: relative; /* Allows child elements to be positioned */
+    background-color: rgba(0, 71, 240, 0.5); /* Semi-transparent blue background */
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(152, 251, 152, 0.5)); /* Gradient effect */
+    width: 100%; /* Full width */
+    height: auto; /* Adjust height based on content */
+    padding: 10px; /* Padding inside the section */
+    margin-top: 20px; /* Adds space at the top */
+}
+
+.contact-text, p {
+    font-size: 20px; /* Font size */
+    font-family: sans-serif; /* Font style */
+    padding: 5px; /* Padding inside the text block */
+    text-align: center; /* Centers text horizontally */
+    margin-top: 20px; /* Adds space at the top */
+}
 
 
 
-		* {
-			/* Universal star selector, apply these properties globally */
-			padding: 0;
-			margin: 0;
-			font-size: 40px;
-			font-family: "Lobster", sans-serif;
-			box-sizing: border-box; /* calculates width, height inc padding and border */
-			text-decoration: none;
-		}
+/* Styles for the video container */
+.video-box {
+    width: 770px; /* Fixed width */
+    height: 500px; /* Fixed height */
+    padding: 0px; /* No padding */
+    margin: 0px; /* No margin */
+    position: relative; /* Enables absolute positioning of child elements */
+    box-sizing: border-box; /* Includes padding in width and height */
+    align-content: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+    text-align: center; /* Center text horizontally */
+}
 
-		body {
-			/* Over ride default values */
-			width: 100%;
-			height: 2000px;
-			/*flex-shrink: 0;*/
+/* Styles for the video inside the video box */
+.video-box video {
+    position: absolute; /* Absolute positioning for full coverage */
+    top: 0; /* Aligns to the top */
+    left: 0; /* Aligns to the left */
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    object-fit: cover; /* Ensures the video covers the container */
+}
 
-		}
+/* Styles for boxes with flex container */
+.box1, .box4 {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Align items vertically */
+    justify-content: center; /* Center items vertically */
+    text-align: center; /* Center text horizontally */
+}
 
-		html {
-    		scroll-behavior: smooth;
-		}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh; /* Changed to 'vh' for full viewport height */
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center; /* Centers vertically */
+    z-index: 1002;
+}
 
+.modal img {
+    max-width: 90vw;
+    max-height: 90vh; /* Use 90% of the viewport height */
+    object-fit: contain; /* Ensures the image scales within these limits */
+}
 
-		.navbar {
-			position: fixed;
-			background-color: rgba(0, 71, 240, 0.5);
-			background-image: linear-gradient(to right, rgba(0, 71, 240, 0.5), rgba(152, 251, 152, 0.5));
-			backdrop-filter: blur(5px);
-			display: flex;
-			padding: 5px;
-			z-index: 1000;
-			width: 100vw;
-			height: 90px;
-			align-items: center;
-		}
+.modal.active {
+    display: flex; /* Ensures it shows up when activated */
+}
 
-		.name-head {
-			white-space: nowrap; /* Prevent text from wrapping */
-			margin: 0px;
-			margin-left: 5%;
-			color: white;
-			width: 200px;
-			height: 50px;
-		}
-
-		.nav-list {
-			display: flex;
-			justify-content: flex-start;
-			list-style: none; /* Remove bullet points */
-			margin-left: 150px;
-			align-items: center;
-
-
-		}
-
-		.nav-item a:hover {
-			color: red;
-			opacity: 0.7;
-			cursor: pointer;
-		}
-
-		.nav-item a {
-    		margin-right: 20px; /* Space between each nav item */
-    		margin-left: 20px;
-    		color: white;
-    		font-size: 20px;
-    		transition: color 0.5s ease, opacity 0.5s ease;
-		}
-
-		.nav-item {
-			font-size: 20px;
-			
-			color: white;
-		}
-
-		.container-section {
-			position: relative;
-			display: flex;
-			justify-content: space-evenly;
-			align-content: space-evenly;
-			flex-direction: row;
-			background-color: white;
-			margin: 0px;
-			width: 100%;
-			height: auto;
-			flex-wrap: wrap;
-			top: 90px;
-			padding-top: 100px;
-		}
-
-		.box1 {
-			width: 770px;
-			height: 500px;
-			background-color: white;
-			border-radius: 6px;
-			text-align: center;
-			padding: 10px;
-		}
-
-		.box1 p {
-    		margin: 0; /* Remove default margins */
-    		padding: 0; /* Remove default padding */
-    		overflow: hidden; /* Hide overflow if text exceeds the container */
-		}
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1003;
+}
 
 
-		
-		.profile-text {
-			font-size: 5px;
-			text-align: center;
-			padding: 10px;
-			min-width: 200px;
+/* Styles for the gallery section */
+.gallery-section {
+    background-color: white; /* White background */
+    padding: 10px; /* Padding inside the section */
+    margin-top: 100px; /* Space above the section */
+    margin-bottom: 100px; /* Space below the section */
+    border-top: solid 1px; /* Top border */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items vertically */
+    justify-content: flex-start; /* Start alignment from the top */
+    align-items: center; /* Center items horizontally */
+    height: auto; /* Adjust height based on content */
+}
 
-		}
+/* Styles for the grid container */
+.grid-container {
+    display: grid; /* Use CSS Grid layout */
+    width: 80vw; /* Width of the grid container */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid columns */
+    gap: 10px; /* Space between grid items */
+    border: 4px solid black; /* Black border around the grid */
+    border-radius: 8px; /* Rounded corners for the border */
+    padding: 5px; /* Padding inside the grid container */
+    height: auto; /* Adjust height based on content */
+    grid-auto-rows: auto; /* Rows grow based on content */
+}
 
-		
-		.box2 {
-			background-color: gray;
-			width: 770px;
-			height: 500px;
-			border-radius: 0px;
-			padding: 0px;
-			
-		}
+/* Styles for individual grid items */
+.grid-item {
+    background-color: darkgrey; /* Dark grey background */
+    border: 1px solid black; /* Black border */
+    display: flex; /* Flexbox for content alignment */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    font-size: 20px; /* Font size for text */
+    position: relative; /* Relative positioning for content */
+    overflow: hidden; /* Hides overflow content */
+    width: 100%; /* Full width of the grid item */
+    height: 100%; /* Full height of the grid item */
+}
 
-		.profile-image {
-			width: 770px; /* Example width */
-		    height: 500px; /* Example height */
-		    padding: 0px; /* Example padding */
-		    margin: 0px;
-		    padding: 0px;
-		    position: relative; /* Ensures proper layout context */
-		    box-sizing: border-box; /* Includes padding in the container's width and height */
-		    align-content: center;
-		    text-align: center;
-		}
+/* Styles for images inside grid items */
+.grid-item img {
+    width: 100%; /* Full width of the grid item */
+    height: 100%; /* Full height of the grid item */
+    object-fit: cover; /* Ensures the image covers the grid item */
+}
 
-		.profile-image img {
-    		width: 100%; /* Stretch to fill the width of the container */
-		    height: 100%; /* Stretch to fill the height of the container */
-		    object-fit: cover; /* Cover the container while maintaining aspect ratio */
-		    display: block; /* Remove any extra spacing around the image */
-		    margin: 0; /* Remove default margins */
-		    align-content: center;
-		}
+/* Hover effect for grid items */
+.grid-item:hover {
+    transform: scale(1.05); /* Slightly enlarges the item on hover */
+}
 
-		.centered-text {
-			display: flex; /* Flexbox for centering */
-    		justify-content: center; /* Center horizontally */
-    		align-items: flex-start; /* Center vertically */
-    		height: 10%; /* Take the full height of the parent */
-    		text-align: center;
-    		font-size: 30px;
-		}
+/* Styles for the footer heading */
+.footer-heading {
+    font-size: 30px; /* Font size for heading */
+    font-family: "Lobster", sans-serif; /* Font family for heading */
+    color: white; /* White text color */
+    align-content: center; /* Center content vertically */
+    text-align: center; /* Center text horizontally */
+}
 
-		p.profile-paragraph {
-			justify-content: center; /* Center items vertically */
-    		text-align: center; /* Center text horizontally if needed */
-			font-size: 20px;
-			font-family: sans-serif;
-			border-top: solid 1px black;
-			border-bottom: solid 1px black;
-			padding: 5px;
-		}
+/* Styles for glowing text effect */
+.glow-text {
+    color: #fff; /* White text color */
+    text-shadow: 0 0 5px #fff, /* White inner glow */
+                 0 0 10px #fff, 
+                 0 0 15px #ff0000, /* Red outer glow */
+                 0 0 20px #ff0000,
+                 0 0 25px #ff0000,
+                 0 0 30px #ff0000,
+                 0 0 35px #ff0000; /* Extends the glow effect */
+}
 
-		p.services-paragraph {
-			align-items: flex-start;
-			justify-content: center;
-			font-size: 20px;
-			font-family: sans-serif;
-			border-top: solid 1px black;
-			border-bottom: solid 1px black;
-			padding: 5px;
-		}
+.instagram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #C13584; /* Instagram pink */
+    border-radius: 50%;
+    border: solid 1px white;
+    margin-left: 20px;
+}
 
-		
-		.box3 {
-			background-color: gray;
-			width: 770px;
-			height: 500px;
-			border-radius: 0px;
-			padding: 0px;
-			margin: 0px;
-			
-		}
+.instagram a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
 
-		.box4 {
-			background-color: white;
-			width: 770px;
-			height: 500px;
-			border-radius: 6px;
-			padding: 10px;
-			text-align: center;
-		}
+.instagram i {
+    color: white;
+    font-size: 24px;
+}
 
-		
+.social-links {
+    display: flex; /* Flexbox to align items horizontally */
+    justify-content: flex-start; /* Aligns items to the left */
+    list-style: none; /* Removes default bullet points from list */
+    margin-left: 150px; /* Adds space to the left of the list */
+    align-items: center; /* Centers items vertically */
 
-		.contact-section {
-			background-color: rgba(0, 71, 240, 0.5);
-			background-image: linear-gradient(to right, rgba(0, 71, 240, 0.5), rgba(152, 251, 152, 0.5));
-			width: 100%;
-			height: 400px;
-			padding: 10px;
-			margin-top: 100px;
-		}
-
-		.contact-text, p {
-			font-size: 20px;
-			font-family: sans-serif;
-			padding: 5px;
-		}
-
-		
-		.twitter {
-		    display: flex; /* Use flexbox */
-		    justify-content: center; /* Center horizontally */
-		    align-items: center; /* Center vertically */
-		    width: 50px; /* Set a width if needed */
-		    height: 50px; /* Set a height if needed */
-		    background-color: #1da1f2; /* Example background color (Twitter blue) */
-		    border-radius: 50%; /* Make the container circular (optional) */
-		    border: solid 1px white;
-		    margin-left: 20px;
-		}
-
-		/* Ensure the link takes up the full space of the list item */
-		.twitter a {
-		    display: flex; /* Use flexbox for the link */
-		    justify-content: center; /* Center horizontally */
-		    align-items: center; /* Center vertically */
-		    width: 100%; /* Full width of the list item */
-		    height: 100%; /* Full height of the list item */
-		    text-decoration: none; /* Remove underline from link */
-		}
-
-		/* Style the icon */
-		.twitter i {
-		    color: white; /* Icon color */
-		    font-size: 24px; /* Icon size */
-		}
-
-
-		.video-box {
-		    width: 770px; /* Example width */
-		    height: 500px; /* Example height */
-		    padding: 0px; /* Example padding */
-		    margin: 0px;
-		    padding: 0px;
-		    position: relative; /* Ensures proper layout context */
-		    box-sizing: border-box; /* Includes padding in the container's width and height */
-		    align-content: center;
-		    justify-content: center;
-		    text-align: center;
-		}
-
-		.video-box video {
-		    position: absolute;
-		    top: 0;
-		    left: 0;
-		    width: 100%;
-		    height: 100%;
-		    object-fit: cover; /* Ensures the video covers the container */
-		}
-				
-
-		.box1, .box4 {
-		    display: flex; /* Make it a flex container */
-		    flex-direction: column; /* Align items vertically */
-		    justify-content: center; /* Center items vertically */
-		    text-align: center; /* Center text horizontally if needed */
-		}
-
-
-		
-		
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vw;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 1002;
-        }
-        .modal img {
-            max-width: 90vw;
-            max-height: 90vw;
-            object-fit: contain; /* Ensure the image scales within these limits */
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 2rem;
-            color: white;
-            cursor: pointer;
-            z-index: 1003;
-        }
-
-		.gallery-section {
-			background-color: white;
-		    padding: 10px;
-		    margin-top: 100px;
-		    margin-bottom: 100px;
-		    border-top: solid 1px;
-		    border-bottom: solid 1px;
-		    display: flex;              /* Use Flexbox */
-		    flex-direction: column;      /* Arrange items in a column (top to bottom) */
-		    justify-content: flex-start; /* Align items starting from the top */
-		    align-items: center;         /* Center horizontally */
-		    height: 900px;  
-		}
-				
-        .grid-container {
-			display: grid;
-			height: 1000px;
-			width: 80vw;
-			grid-template-columns: repeat(4, 1fr); /* Two equal-width columns */
-			grid-template-rows: repeat(4, 1fr); /* Two equal-height rows */
-			gap: 10px; /* Adds some spacing between grid items */
-			border: 4px solid black;
-			padding: 5px;
-			align-content: center;
-		}
-
-		.grid-item {
-			background-color: lightblue;
-			border: 1px solid black;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			font-size: 20px;
-		}
-
-		.grid-item:hover {
-			transform: scale(1.05);
-		}
+}

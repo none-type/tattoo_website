@@ -33,11 +33,12 @@
 	        <li class="nav-item"><a href="#contact">Contact</a></li>
 	        <li class="nav-item"> | </li>
 	  
-	        <li class="twitter">
-	        	<a href="https://twitter.com/yourusername" target="_blank">
-                	<i class="fab fa-twitter"></i>
-            	</a>
-	        </li>
+	       
+	        <li class="instagram">
+			    <a href="https://instagram.com/yourusername" target="_blank">
+			        <i class="fab fa-instagram"></i>
+			    </a>
+			</li>
 	    </ul>
 	</nav>
 
@@ -92,55 +93,63 @@
 			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</div>
+
 		<div class="gallery-section" id="gallery">
-        	<div class="centered-text">Gallery</div>
-	        <div class="grid-container">
-				<div class="grid-item grid-item1">Item 1</div>
-				<div class="grid-item grid-item2">Item 2</div>
-				<div class="grid-item grid-item3">Item 3</div>
-				<div class="grid-item grid-item4">Item 4</div>
-				<div class="grid-item grid-item5">Item 5</div>
-				<div class="grid-item grid-item6">Item 6</div>
-				<div class="grid-item grid-item7">Item 7</div>
-				<div class="grid-item grid-item8">Item 8</div>
-				<div class="grid-item grid-item9">Item 9</div>
-				<div class="grid-item grid-item10">Item 10</div>
-				<div class="grid-item grid-item11">Item 11</div>
-				<div class="grid-item grid-item12">Item 12</div>
-				<div class="grid-item grid-item13">Item 13</div>
-				<div class="grid-item grid-item14">Item 14</div>
-				<div class="grid-item grid-item15">Item 15</div>
-				<div class="grid-item grid-item16">Item 16</div>
+        	<div class="centered-text">Gallery
+        	</div>
+		    <div class="grid-container">
+		        {% for image in gallery_images %}
+		            <div class="grid-item">
+		                <img src="{{ image.image.url }}" alt="{{ image.title }}">
+		            </div>
+	        	{% endfor %}
 			</div>
 	    </div>
 
 	    <div class="modal" id="modal">
-	        <span class="modal-close" onclick="closeModal()">&times;</span>
-	        <img id="modal-image" src="" alt="Full Size Image">
-	    </div>
+		    <span class="modal-close" onclick="closeModal()">&times;</span>
+		    <img id="modal-image" alt="Full Size Image">
+		</div>
 		<div class="contact-section" id="contact">
-			<div class="centered-text">
-				contact info
-			</div>
-			<div class="contact-text">
-				<p>email address</p>
-				<br>
-				<p>social media</p>
-			</div>
+		    <div class="footer-heading">Contact Info</div>
+		    <div class="contact-text">
+		        <p>Email</p>
+		        <br>
+		        <p>Social Media</p>
+		        <div class="social-links">
+		            <ul>
+				        <li class="instagram">
+						    <a href="https://instagram.com/yourusername" target="_blank">
+						        <i class="fab fa-instagram"></i>
+						    </a>
+						</li>
+		            </ul>
+		        </div>
+		    </div>
 		</div>
 	</div>
 	<script>
-        function openModal(imageSrc) {
-            const modal = document.getElementById('modal');
-            const modalImage = document.getElementById('modal-image');
-            modalImage.src = imageSrc;
-            modal.classList.add('active');
-        }
+        // Get all gallery images
+		const galleryItems = document.querySelectorAll('.grid-item img');
 
-        function closeModal() {
-            const modal = document.getElementById('modal');
-            modal.classList.remove('active');
-        }
+		// Add click event listeners to all gallery images
+		galleryItems.forEach(item => {
+		    item.addEventListener('click', function() {
+		        openModal(this.src); // Pass the clicked image's src to openModal
+		    });
+		});
+
+		function openModal(imageSrc) {
+		    const modal = document.getElementById('modal');
+		    const modalImage = document.getElementById('modal-image');
+		    modalImage.src = imageSrc;
+		    modal.classList.add('active'); // Show the modal
+		}
+
+		function closeModal() {
+		    const modal = document.getElementById('modal');
+		    modal.classList.remove('active'); // Hide the modal
+		}
     </script>	
 </body>
 </html>
