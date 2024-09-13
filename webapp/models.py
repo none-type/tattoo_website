@@ -13,3 +13,15 @@ class GalleryImage(models.Model):
 
     def __str__(self):
         return self.title or f"Image {self.id}"
+
+class AboutMe(models.Model):
+    content = models.TextField()
+
+    def __str__(self):
+        return 'About Me Section'
+
+class ServicesText(models.Model):
+    content = models.TextField()
+
+    def __str__(self):
+        return 'Services Info'

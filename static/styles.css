@@ -34,7 +34,7 @@ html {
     display: flex; /* Flexbox for aligning items inside the navbar */
     padding: 5px; /* Padding inside the navbar */
     z-index: 1000; /* Ensures the navbar is above other elements */
-    width: 100vw; /* Full viewport width */
+    width: 100%; /* Full viewport width */
     height: 90px; /* Fixed height for the navbar */
     align-items: center; /* Vertically centers the navbar items */
 }
@@ -55,6 +55,7 @@ html {
     margin-left: 150px; /* Adds space to the left of the list */
     align-items: center; /* Centers items vertically */
 }
+
 
 .nav-item a:hover {
     color: red; /* Changes link color on hover */
@@ -195,7 +196,7 @@ p.services-paragraph {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(152, 251, 152, 0.5)); /* Gradient effect */
     width: 100%; /* Full width */
     height: auto; /* Adjust height based on content */
-    padding: 10px; /* Padding inside the section */
+    padding: 20px; /* Padding inside the section */
     margin-top: 20px; /* Adds space at the top */
 }
 
@@ -239,6 +240,13 @@ p.services-paragraph {
     justify-content: center; /* Center items vertically */
     text-align: center; /* Center text horizontally */
 }
+
+
+
+
+
+
+/* Gallery Section */
 
 .modal {
     display: none;
@@ -299,6 +307,8 @@ p.services-paragraph {
     padding: 5px; /* Padding inside the grid container */
     height: auto; /* Adjust height based on content */
     grid-auto-rows: auto; /* Rows grow based on content */
+    margin-top: 10px;
+    background-color: steelblue;
 }
 
 /* Styles for individual grid items */
@@ -327,6 +337,10 @@ p.services-paragraph {
     transform: scale(1.05); /* Slightly enlarges the item on hover */
 }
 
+
+
+/* Footer-Contact section */
+
 /* Styles for the footer heading */
 .footer-heading {
     font-size: 30px; /* Font size for heading */
@@ -336,18 +350,15 @@ p.services-paragraph {
     text-align: center; /* Center text horizontally */
 }
 
-/* Styles for glowing text effect */
-.glow-text {
-    color: #fff; /* White text color */
-    text-shadow: 0 0 5px #fff, /* White inner glow */
-                 0 0 10px #fff, 
-                 0 0 15px #ff0000, /* Red outer glow */
-                 0 0 20px #ff0000,
-                 0 0 25px #ff0000,
-                 0 0 30px #ff0000,
-                 0 0 35px #ff0000; /* Extends the glow effect */
+.email-text {
+    font-family: sans-serif;
+    font-size: 20px;
+    color: yellow;
 }
 
+
+
+/* Social Media */
 .instagram {
     display: flex;
     justify-content: center;
@@ -357,7 +368,6 @@ p.services-paragraph {
     background-color: #C13584; /* Instagram pink */
     border-radius: 50%;
     border: solid 1px white;
-    margin-left: 20px;
 }
 
 .instagram a {
@@ -376,9 +386,8 @@ p.services-paragraph {
 
 .social-links {
     display: flex; /* Flexbox to align items horizontally */
-    justify-content: flex-start; /* Aligns items to the left */
+    justify-content: center; /* Aligns items to the left */
     list-style: none; /* Removes default bullet points from list */
-    margin-left: 150px; /* Adds space to the left of the list */
     align-items: center; /* Centers items vertically */
-
 }
+
