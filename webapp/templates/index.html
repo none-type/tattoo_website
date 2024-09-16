@@ -23,18 +23,18 @@
 <body>
 	<nav class="navbar" id='home'>
 		<h1 class="name-head">Full Name</h1>
-	    <ul class="nav-list">
-	    	<li class="nav-item"> | </li>
-	        <li class="nav-item"><a href="#home">Home</a></li>
-	        <li class="nav-item"> | </li>
-	        <li class="nav-item"><a href="#about">About</a></li>
-	        <li class="nav-item"> | </li>
-	        <li class="nav-item"><a href="#services">Services</a></li>
-	        <li class="nav-item"> | </li>
-	        <li class="nav-item"><a href="#gallery">Gallery</a></li>
-	        <li class="nav-item"> | </li>
-	        <li class="nav-item"><a href="#contact">Contact</a></li>
-	        <li class="nav-item"> | </li>
+	    <ul class="navbar-links">
+	    	
+	        <li class="list-link"><a href="#home">Home</a></li>
+	        
+	        <li class="list-link"><a href="#about">About</a></li>
+	        
+	        <li class="list-link"><a href="#services">Services</a></li>
+	        
+	        <li class="list-link"><a href="#gallery">Gallery</a></li>
+	        
+	        <li class="list-link"><a href="#contact">Contact</a></li>
+	        
 	  
 	       
 	        <li class="instagram">
@@ -42,7 +42,17 @@
 			        <i class="fab fa-instagram"></i>
 			    </a>
 			</li>
+			<li class="instagram">
+			    <a href="https://instagram.com/yourusername" target="_blank">
+			        <i class="fab fa-instagram"></i>
+			    </a>
+			</li>
 	    </ul>
+	    <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
 	</nav>
 
 	<div class="container-section">
@@ -129,6 +139,11 @@
 						        <i class="fab fa-instagram"></i>
 						    </a>
 						</li>
+						<li class="instagram">
+						    <a href="https://instagram.com/yourusername" target="_blank">
+						        <i class="fab fa-instagram"></i>
+						    </a>
+						</li>
 		            </ul>
 		        </div>
 		    </div>
@@ -150,12 +165,20 @@
 		    const modalImage = document.getElementById('modal-image');
 		    modalImage.src = imageSrc;
 		    modal.classList.add('active'); // Show the modal
+		    document.body.style.overflow = 'hidden'; // Disable scroll
 		}
 
 		function closeModal() {
 		    const modal = document.getElementById('modal');
 		    modal.classList.remove('active'); // Hide the modal
+		    document.body.style.overflow = ''; // Re-enable scroll
 		}
+
+
+		function toggleMenu() {
+            const navbarLinks = document.querySelector('.navbar-links');
+            navbarLinks.classList.toggle('active');
+        }
     </script>
     
 </body>
