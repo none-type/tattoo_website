@@ -18,6 +18,7 @@
 
 body {
     /* Body-specific overrides */
+    background-color: rgba(26, 35, 126, 1.0);
     width: 100%; /* Makes body fill the full width of the viewport */
     height: auto; /* Lets the height adjust based on content */
 }
@@ -152,23 +153,29 @@ html {
     position: relative; /* Allows absolute positioning of child elements */
     display: flex; /* Flexbox layout */
     justify-content: space-evenly; /* Evenly distributes space between items */
-    align-content: space-evenly; /* Aligns items evenly */
+    align-content: space-evenly; /* Aligns items evenly, only available with flex-wrap: wrap; */
     flex-direction: row; /* Aligns items in a row */
-    background-color: white; /* White background */
+    background-color: rgba(26, 35, 126, 1.0); /* White background */
     margin: 0px; /* Removes default margin */
     width: 100%; /* Full width */
     flex-wrap: wrap; /* Wraps items onto a new line if necessary */
     top: 90px; /* Pushes section down below navbar */
     padding-top: 100px; /* Adds space at the top of the section */
+    column-gap: 10px;
+    row-gap: 10px;
 }
 
+/*////////////////////////*/
+/* about section */
+
 .box1 {
-    width: 770px; /* Fixed width */
-    height: 500px; /* Fixed height */
-    background-color: white; /* White background */
-    border-radius: 6px; /* Rounded corners */
-    text-align: center; /* Centers text horizontally */
-    padding: 10px; /* Padding inside the box */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60rem; /* Adjust as needed */
+    height: auto; /* Height will be controlled by padding-bottom */
+    margin: 0 auto; /* Center the container */
+    max-width: 770px;
 }
 
 .box1 p {
@@ -184,45 +191,47 @@ html {
     min-width: 200px; /* Minimum width for the text block */
 }
 
+/*////////////////////////*/
+/* profile image */
+
 .box2 {
-    background-color: gray; /* Gray background */
-    width: 770px; /* Fixed width */
-    height: 500px; /* Fixed height */
-    border-radius: 20px; /* No border radius */
-    padding: 0px; /* No padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60rem; /* Adjust as needed */
+    height: auto; /* Height will be controlled by padding-bottom */
+    margin: 0 auto; /* Center the container */
+    max-width: 770px;
 }
 
 .profile-image {
-    width: 770px; /* Full width */
-    height: 500px; /* Full height */
-    padding: 0px; /* No padding */
-    margin: 0px; /* No margin */
-    position: relative; /* Relative positioning for child elements */
-    box-sizing: border-box; /* Include padding in width and height */
-    align-content: center; /* Center content */
-    text-align: center; /* Center text */
-    border-radius: 20px; /* Rounds the corners of the video itself */
-    overflow: hidden; /* Clips the video to stay within the rounded corners */
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden; /* Hide overflow */
+    border-radius: 15px; /* Adjust corner rounding as needed */
 }
 
 .profile-image img {
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    object-fit: cover; /* Ensures image covers the container */
-    display: block; /* Prevents extra space below the image */
-    margin: 0; /* No margin */
-    align-content: center; /* Centers content */
-    border-radius: 20px; /* Rounds the corners of the video itself */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area of the container */
+    border-radius: inherit; /* Match border-radius of the container */
 }
 
+/*////////////////////////*/
+
 .centered-text {
+    color: white;
     display: flex; /* Flexbox layout */
     justify-content: center; /* Centers items horizontally */
     align-items: flex-start; /* Aligns items at the top */
     height: 10%; /* Set height relative to parent */
     text-align: center; /* Center text horizontally */
     font-size: 30px; /* Font size */
-    color: black; /* Black text color */
 }
 
 p.profile-paragraph {
@@ -235,7 +244,61 @@ p.profile-paragraph {
     padding: 5px; /* Padding inside the paragraph */
 }
 
+
+
+/*////////////////////////*/
+/* Styles for the video  */
+
+.box3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60rem; /* Adjust as needed */
+    height: auto; /* Height will be controlled by padding-bottom */
+    margin: 0 auto; /* Center the container */
+    max-width: 770px;
+}
+
+/* Maintain 16:9 aspect ratio using padding-bottom */
+.video-box {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden; /* Hide overflow */
+    border-radius: 15px; /* Adjust corner rounding as needed */
+}
+
+/* Style the video */
+.video-box video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area of the container */
+    border-radius: inherit; /* Match border-radius of the container */
+}
+
+/*////////////////////////*/
+
+/* services */
+
+.box4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60rem; /* Adjust as needed */
+    height: auto; /* Height will be controlled by padding-bottom */
+    margin: 0 auto; /* Center the container */
+    max-width: 770px;
+}
+
+#services {
+    
+}
+
 p.services-paragraph {
+    color: white;
     align-items: flex-start; /* Aligns items at the top */
     justify-content: center; /* Centers items vertically */
     font-size: 20px; /* Font size */
@@ -245,23 +308,8 @@ p.services-paragraph {
     padding: 5px; /* Padding inside the paragraph */
 }
 
-.box3 {
-    background-color: gray; /* Gray background */
-    width: 770px; /* Fixed width */
-    height: 500px; /* Fixed height */
-    border-radius: 20px; /* No border radius */
-    padding: 0px; /* No padding */
-    margin: 0px; /* No margin */
-}
 
-.box4 {
-    background-color: white; /* White background */
-    width: 770px; /* Fixed width */
-    height: 500px; /* Fixed height */
-    border-radius: 6px; /* Rounded corners */
-    padding: 10px; /* Padding inside the box */
-    text-align: center; /* Centers text horizontally */
-}
+/*////////////////////////*/
 
 .contact-section {
     position: relative; /* Allows child elements to be positioned */
@@ -283,31 +331,6 @@ p.services-paragraph {
 
 
 
-/* Styles for the video container */
-.video-box {
-    width: 770px; /* Fixed width */
-    height: 500px; /* Fixed height */
-    padding: 0px; /* No padding */
-    margin: 0px; /* No margin */
-    position: relative; /* Enables absolute positioning of child elements */
-    box-sizing: border-box; /* Includes padding in width and height */
-    align-content: center; /* Centers content vertically */
-    justify-content: center; /* Centers content horizontally */
-    text-align: center; /* Center text horizontally */
-    border-radius: 20px;
-    overflow: hidden; /* Clips the video to stay within the rounded corners */
-}
-
-/* Styles for the video inside the video box */
-.video-box video {
-    position: absolute; /* Absolute positioning for full coverage */
-    top: 0; /* Aligns to the top */
-    left: 0; /* Aligns to the left */
-    width: 100%; /* Full width of the container */
-    height: 100%; /* Full height of the container */
-    object-fit: cover; /* Ensures the video covers the container */
-    border-radius: 20px; /* Rounds the corners of the video itself */
-}
 
 
 
@@ -363,11 +386,12 @@ p.services-paragraph {
 
 /* Styles for the gallery section */
 .gallery-section {
-    background-color: white; /* White background */
+    background-color: rgba(50, 50, 50, 1.0); /* White background */
     padding: 10px; /* Padding inside the section */
     margin-top: 100px; /* Space above the section */
     margin-bottom: 100px; /* Space below the section */
     border-top: solid 1px; /* Top border */
+    border-radius: 20px;
     display: flex; /* Use flexbox for layout */
     flex-direction: column; /* Arrange items vertically */
     justify-content: flex-start; /* Start alignment from the top */
@@ -387,7 +411,7 @@ p.services-paragraph {
     height: auto; /* Adjust height based on content */
     grid-auto-rows: auto; /* Rows grow based on content */
     margin-top: 10px;
-    background-color: rgba(152, 251, 152, 0.5);
+    background-color: darkgrey;
 }
 
 /* Styles for individual grid items */
@@ -444,9 +468,12 @@ p.services-paragraph {
     align-items: center;
     width: 50px;
     height: 50px;
+    min-height: 50px;
+    min-width: 50px;
     background-color: #C13584; /* Instagram pink */
     border-radius: 50%;
     border: solid 1px white;
+    margin: 5px;
 }
 
 .instagram a {
