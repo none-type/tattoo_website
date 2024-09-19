@@ -22,10 +22,11 @@
 </head>
 <body>
 	<nav class="navbar" id="home">
-		<h1 class="name-head">Full Name</h1>
+		<div class="name-head">
+			<h1>Alex st George</h1>
+		</div>
+		
 	    <ul class="navbar-links">
-	    	
-	        <li class="list-link"><a href="#home">Home</a></li>
 	        
 	        <li class="list-link"><a href="#about">About</a></li>
 	        
@@ -38,12 +39,12 @@
 	  
 	       
 	        <li class="instagram">
-			    <a href="https://instagram.com/yourusername" target="_blank">
+			    <a href="https://www.instagram.com/saintgeorgetattoo/" target="_blank">
 			        <i class="fab fa-instagram"></i>
 			    </a>
 			</li>
 			<li class="instagram">
-			    <a href="https://instagram.com/yourusername" target="_blank">
+			    <a href="https://www.instagram.com/cyberbite2000/" target="_blank">
 			        <i class="fab fa-instagram"></i>
 			    </a>
 			</li>
@@ -136,12 +137,12 @@
 		        <div class="social-links">
 		            <ul>
 				        <li class="instagram">
-						    <a href="https://instagram.com/yourusername" target="_blank">
+						    <a href="https://www.instagram.com/saintgeorgetattoo/" target="_blank">
 						        <i class="fab fa-instagram"></i>
 						    </a>
 						</li>
 						<li class="instagram">
-						    <a href="https://instagram.com/yourusername" target="_blank">
+						    <a href="https://www.instagram.com/cyberbite2000/" target="_blank">
 						        <i class="fab fa-instagram"></i>
 						    </a>
 						</li>
@@ -166,14 +167,20 @@
 		    const modalImage = document.getElementById('modal-image');
 		    modalImage.src = imageSrc;
 		    modal.classList.add('active'); // Show the modal
+
+		    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth; // Calculate scrollbar width
+		    document.body.style.paddingRight = `${scrollbarWidth}px`; // Add padding to offset scrollbar disappearance
 		    document.body.style.overflow = 'hidden'; // Disable scroll
 		}
 
 		function closeModal() {
 		    const modal = document.getElementById('modal');
 		    modal.classList.remove('active'); // Hide the modal
+
 		    document.body.style.overflow = ''; // Re-enable scroll
+		    document.body.style.paddingRight = ''; // Remove padding
 		}
+
 
 
 		function toggleMenu() {

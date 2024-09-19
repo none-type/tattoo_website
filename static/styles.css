@@ -36,7 +36,7 @@ html {
     top: 0; /* Aligns the navbar to the top */
     left: 0; /* Aligns the navbar to the left */
     right: 0; /* Aligns the navbar to the right */
-    background-color: rgba(0, 71, 240, 0.5); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(152, 251, 152, 0.5)); /* Gradient effect */
     backdrop-filter: blur(5px); /* Adds a blur effect to background */
     display: flex; /* Flexbox for aligning items inside the navbar */
@@ -47,15 +47,22 @@ html {
     align-items: center; /* Vertically centers the navbar items */
     min-height: 100px;
     max-height: 100px;
+    border-bottom: 1px solid white;
 }
 
 .name-head {
+    display: flex;
     white-space: nowrap; /* Prevents the text from wrapping */
-    margin: 0px; /* Removes margins */
-    margin-left: 5%; /* Adds space to the left of the text */
+    margin-left: 2%; /* Adds space to the left of the text */
+    margin-right: 2%;
     color: white; /* White text color */
     width: 200px; /* Fixed width */
     height: 50px; /* Fixed height */
+}
+
+.name-head h1 {
+    display: flex;
+    font-size: 3vw;
 }
 
 
@@ -157,7 +164,7 @@ html {
     align-content: center; /* Aligns items evenly, only available with flex-wrap: wrap; */
     align-items: center;
     flex-direction: row; /* Aligns items in a row */
-    background-color: rgba(26, 35, 126, 1.0); 
+    background-color: rgba(27, 27, 27, 1.0); 
     margin: 0px; /* Removes default margin */
     width: 100%; /* Full width */
     flex-wrap: wrap; /* Wraps items onto a new line if necessary */
@@ -176,10 +183,10 @@ html {
     max-width: 700px; /* Set max width */
     min-width: 200px; /* Set min width */
     aspect-ratio: 16 / 9; /* Maintains a 16:9 aspect ratio */
-    background-color: gray; /* Example background color */
+    background-color: rgba(50, 50, 50, 1.0);
     overflow: hidden; /* In case you have content overflow */
     margin: 0 auto; /* Centers the box */
-    border: 2px solid black;
+    border: 2px solid white;
     border-radius: 15px;
 }
 
@@ -187,14 +194,29 @@ html {
     margin: 0; /* Removes default margin */
     padding: 0; /* Removes default padding */
     overflow: hidden; /* Hides overflow text */
+    font-size: 1vw; /* Text size is 5% of the viewport width */
 }
 
-.profile-text {
-    font-size: 5px; /* Small font size */
+.profile-paragraph {
+    font-size: 1vw; /* Text size is 5% of the viewport width */
     text-align: center; /* Centers text */
     padding: 10px; /* Padding inside the text container */
     min-width: 200px; /* Minimum width for the text block */
 }
+
+p.profile-paragraph {
+    color: white;
+    align-items: flex-start; /* Aligns items at the top */
+    justify-content: center; /* Centers items vertically */
+    font-size: 20px; /* Font size */
+    font-family: sans-serif; /* Font style */
+    border-top: solid 1px black; /* Top border */
+    border-bottom: solid 1px black; /* Bottom border */
+    padding: 5px; /* Padding inside the paragraph */
+    margin-top: 20px;
+    font-size: 1vw; /* Text size is 5% of the viewport width */
+}
+
 
 /*////////////////////////*/
 /* profile image */
@@ -208,7 +230,7 @@ html {
     background-color: gray; /* Example background color */
     overflow: hidden; /* In case you have content overflow */
     margin: 0 auto; /* Centers the box */
-    border: 2px solid black;
+    border: 2px solid white;
     border-radius: 15px;
 }
 
@@ -242,17 +264,6 @@ html {
     font-size: 30px; /* Font size */
 }
 
-p.profile-paragraph {
-    color: white;
-    align-items: flex-start; /* Aligns items at the top */
-    justify-content: center; /* Centers items vertically */
-    font-size: 20px; /* Font size */
-    font-family: sans-serif; /* Font style */
-    border-top: solid 1px black; /* Top border */
-    border-bottom: solid 1px black; /* Bottom border */
-    padding: 5px; /* Padding inside the paragraph */
-    margin-top: 20px;
-}
 
 
 
@@ -268,7 +279,7 @@ p.profile-paragraph {
     background-color: gray; /* Example background color */
     overflow: hidden; /* In case you have content overflow */
     margin: 0 auto; /* Centers the box */
-    border: 2px solid black;
+    border: 2px solid white;
     border-radius: 15px;
 }
 
@@ -302,10 +313,10 @@ p.profile-paragraph {
     max-width: 700px; /* Set max width */
     min-width: 200px; /* Set min width */
     aspect-ratio: 16 / 9; /* Maintains a 16:9 aspect ratio */
-    background-color: gray; /* Example background color */
+    background-color: rgba(50, 50, 50, 1.0);
     overflow: hidden; /* In case you have content overflow */
     margin: 0 auto; /* Centers the box */
-    border: 2px solid black;
+    border: 2px solid white;
     border-radius: 15px;
 }
 
@@ -313,7 +324,7 @@ p.services-paragraph {
     color: white;
     align-items: flex-start; /* Aligns items at the top */
     justify-content: center; /* Centers items vertically */
-    font-size: 20px; /* Font size */
+    font-size: 1vw; /* Text size is 5% of the viewport width */
     font-family: sans-serif; /* Font style */
     border-top: solid 1px black; /* Top border */
     border-bottom: solid 1px black; /* Bottom border */
@@ -335,12 +346,14 @@ p.services-paragraph {
 
 .contact-section {
     position: relative; /* Allows child elements to be positioned */
-    background-color: rgba(0, 71, 240, 0.5); /* Semi-transparent blue background */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(152, 251, 152, 0.5)); /* Gradient effect */
+    backdrop-filter: blur(5px); /* Adds a blur effect to background */
     width: 100%; /* Full width */
     height: auto; /* Adjust height based on content */
     padding: 20px; /* Padding inside the section */
     margin-top: 20px; /* Adds space at the top */
+    border-top: 1px solid white;
 }
 
 .contact-text, p {
@@ -417,13 +430,11 @@ p.services-paragraph {
     width: 80vw; /* Width of the grid container */
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid columns */
     gap: 10px; /* Space between grid items */
-    border: 2px solid black; /* Black border around the grid */
-    border-radius: 8px; /* Rounded corners for the border */
     padding: 15px; /* Padding inside the grid container */
     height: auto; /* Adjust height based on content */
     grid-auto-rows: auto; /* Rows grow based on content */
     margin-top: 10px;
-    background-color: darkblue;
+    background-color: ;
 }
 
 /* Styles for individual grid items */
