@@ -21,7 +21,7 @@
 
 </head>
 <body>
-	<nav class="navbar" id='home'>
+	<nav class="navbar" id="home">
 		<h1 class="name-head">Full Name</h1>
 	    <ul class="navbar-links">
 	    	
@@ -100,11 +100,11 @@
 			<h1 class="centered-text">
 			Services
 			</h1>
-			<p class="profile-paragraph">
+			<p class="services-paragraph">
 		        {% if services_info %}
 		            {{ services_info.content }}
 		        {% else %}
-		            Default content for About Me section.
+		            Default content for Services section.
 		        {% endif %}
 		    </p>
 		</div>
@@ -125,6 +125,7 @@
 		    <span class="modal-close" onclick="closeModal()">&times;</span>
 		    <img id="modal-image" alt="Full Size Image">
 		</div>
+	</div>	
 		<div class="contact-section" id="contact">
 		    <div class="footer-heading">Contact Info</div>
 		    <div class="contact-text">
@@ -148,7 +149,7 @@
 		        </div>
 		    </div>
 		</div>
-	</div>
+	
 	<script>
         // Get all gallery images
 		const galleryItems = document.querySelectorAll('.grid-item img');

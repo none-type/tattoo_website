@@ -45,7 +45,8 @@ html {
     width: 100vw; /* Full viewport width */
     justify-content: space-between;
     align-items: center; /* Vertically centers the navbar items */
-    min-height: 90px;
+    min-height: 100px;
+    max-height: 100px;
 }
 
 .name-head {
@@ -115,6 +116,7 @@ html {
         left: 0; /* Aligns the navbar to the left */
         right: 0; /* Aligns the navbar to the right */
         z-index: 1002; /* Higher value to keep it above other elements */
+        max-height: 500px;
     }
 
     .navbar-links {
@@ -134,8 +136,7 @@ html {
 
     .hamburger {
         display: flex;
-        position: absolute;
-        right: 20px;
+        position: relative;
     }
 
     .navbar {
@@ -152,30 +153,34 @@ html {
     min-height: 100vh; /* Ensures section fills the full viewport height */
     position: relative; /* Allows absolute positioning of child elements */
     display: flex; /* Flexbox layout */
-    justify-content: space-evenly; /* Evenly distributes space between items */
-    align-content: space-evenly; /* Aligns items evenly, only available with flex-wrap: wrap; */
+    justify-content: center; /* Evenly distributes space between items */
+    align-content: center; /* Aligns items evenly, only available with flex-wrap: wrap; */
+    align-items: center;
     flex-direction: row; /* Aligns items in a row */
-    background-color: rgba(26, 35, 126, 1.0); /* White background */
+    background-color: rgba(26, 35, 126, 1.0); 
     margin: 0px; /* Removes default margin */
     width: 100%; /* Full width */
     flex-wrap: wrap; /* Wraps items onto a new line if necessary */
-    top: 90px; /* Pushes section down below navbar */
+    top: 100px; /* Pushes section down below navbar */
     padding-top: 100px; /* Adds space at the top of the section */
-    column-gap: 10px;
-    row-gap: 10px;
+    gap: 0.5rem;
+    padding: 20px;
 }
 
 /*////////////////////////*/
 /* about section */
 
 .box1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60rem; /* Adjust as needed */
-    height: auto; /* Height will be controlled by padding-bottom */
-    margin: 0 auto; /* Center the container */
-    max-width: 770px;
+    position: relative;
+    width: 100%;
+    max-width: 700px; /* Set max width */
+    min-width: 200px; /* Set min width */
+    aspect-ratio: 16 / 9; /* Maintains a 16:9 aspect ratio */
+    background-color: gray; /* Example background color */
+    overflow: hidden; /* In case you have content overflow */
+    margin: 0 auto; /* Centers the box */
+    border: 2px solid black;
+    border-radius: 15px;
 }
 
 .box1 p {
@@ -195,13 +200,16 @@ html {
 /* profile image */
 
 .box2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60rem; /* Adjust as needed */
-    height: auto; /* Height will be controlled by padding-bottom */
-    margin: 0 auto; /* Center the container */
-    max-width: 770px;
+    position: relative;
+    width: 100%;
+    max-width: 700px; /* Set max width */
+    min-width: 200px; /* Set min width */
+    aspect-ratio: 16 / 9; /* Maintains a 16:9 aspect ratio */
+    background-color: gray; /* Example background color */
+    overflow: hidden; /* In case you have content overflow */
+    margin: 0 auto; /* Centers the box */
+    border: 2px solid black;
+    border-radius: 15px;
 }
 
 .profile-image {
@@ -209,7 +217,7 @@ html {
     width: 100%;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
     overflow: hidden; /* Hide overflow */
-    border-radius: 15px; /* Adjust corner rounding as needed */
+    border-radius: inherit; /* Adjust corner rounding as needed */
 }
 
 .profile-image img {
@@ -235,13 +243,15 @@ html {
 }
 
 p.profile-paragraph {
-    justify-content: center; /* Vertically centers text */
-    text-align: center; /* Centers text horizontally */
+    color: white;
+    align-items: flex-start; /* Aligns items at the top */
+    justify-content: center; /* Centers items vertically */
     font-size: 20px; /* Font size */
     font-family: sans-serif; /* Font style */
     border-top: solid 1px black; /* Top border */
     border-bottom: solid 1px black; /* Bottom border */
     padding: 5px; /* Padding inside the paragraph */
+    margin-top: 20px;
 }
 
 
@@ -250,13 +260,16 @@ p.profile-paragraph {
 /* Styles for the video  */
 
 .box3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60rem; /* Adjust as needed */
-    height: auto; /* Height will be controlled by padding-bottom */
-    margin: 0 auto; /* Center the container */
-    max-width: 770px;
+    position: relative;
+    width: 100%;
+    max-width: 700px; /* Set max width */
+    min-width: 200px; /* Set min width */
+    aspect-ratio: 16 / 9; /* Maintains a 16:9 aspect ratio */
+    background-color: gray; /* Example background color */
+    overflow: hidden; /* In case you have content overflow */
+    margin: 0 auto; /* Centers the box */
+    border: 2px solid black;
+    border-radius: 15px;
 }
 
 /* Maintain 16:9 aspect ratio using padding-bottom */
@@ -265,7 +278,7 @@ p.profile-paragraph {
     width: 100%;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
     overflow: hidden; /* Hide overflow */
-    border-radius: 15px; /* Adjust corner rounding as needed */
+    border-radius: inherit; /* Adjust corner rounding as needed */
 }
 
 /* Style the video */
@@ -284,17 +297,16 @@ p.profile-paragraph {
 /* services */
 
 .box4 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60rem; /* Adjust as needed */
-    height: auto; /* Height will be controlled by padding-bottom */
-    margin: 0 auto; /* Center the container */
-    max-width: 770px;
-}
-
-#services {
-    
+    position: relative;
+    width: 100%;
+    max-width: 700px; /* Set max width */
+    min-width: 200px; /* Set min width */
+    aspect-ratio: 16 / 9; /* Maintains a 16:9 aspect ratio */
+    background-color: gray; /* Example background color */
+    overflow: hidden; /* In case you have content overflow */
+    margin: 0 auto; /* Centers the box */
+    border: 2px solid black;
+    border-radius: 15px;
 }
 
 p.services-paragraph {
@@ -307,6 +319,16 @@ p.services-paragraph {
     border-bottom: solid 1px black; /* Bottom border */
     padding: 5px; /* Padding inside the paragraph */
 }
+
+
+/* Styles for boxes with flex container */
+.box1, .box4 {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Align items vertically */
+    justify-content: center; /* Center items vertically */
+    text-align: center; /* Center text horizontally */
+}
+
 
 
 /*////////////////////////*/
@@ -331,46 +353,35 @@ p.services-paragraph {
 
 
 
-
-
-
-
-
-/* Styles for boxes with flex container */
-.box1, .box4 {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Align items vertically */
-    justify-content: center; /* Center items vertically */
-    text-align: center; /* Center text horizontally */
-}
-
-
 /*////////////////////////////////////////////////////// */
 
 /* Gallery Section */
 
 .modal {
-    display: none;
+    display: flex; /* Keep flex for alignment */
+    visibility: hidden; /* Hidden by default */
+    opacity: 0; /* Start with 0 opacity for fade-out effect */
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100%; /* Changed to 'vh' for full viewport height */
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.8);
     justify-content: center;
-    align-items: center; /* Centers vertically */
+    align-items: center;
     z-index: 1002;
+    transition: opacity 0.4s ease, visibility 0.4s ease; /* Add smooth transitions */
+}
+
+.modal.active {
+    visibility: visible; /* Make the modal visible */
+    opacity: 1; /* Fully opaque when active */
 }
 
 .modal img {
     max-width: 90vw;
-    max-height: 90vh; /* Use 90% of the viewport height */
-    object-fit: contain; /* Ensures the image scales within these limits */
-}
-
-.modal.active {
-    display: flex; /* Ensures it shows up when activated */
-
+    max-height: 90vh;
+    object-fit: contain;
 }
 
 .modal-close {
@@ -384,14 +395,15 @@ p.services-paragraph {
 }
 
 
+
 /* Styles for the gallery section */
 .gallery-section {
     background-color: rgba(50, 50, 50, 1.0); /* White background */
     padding: 10px; /* Padding inside the section */
     margin-top: 100px; /* Space above the section */
     margin-bottom: 100px; /* Space below the section */
-    border-top: solid 1px; /* Top border */
-    border-radius: 20px;
+    border: 2px solid white; /* Top border */
+    border-radius: 15px;
     display: flex; /* Use flexbox for layout */
     flex-direction: column; /* Arrange items vertically */
     justify-content: flex-start; /* Start alignment from the top */
@@ -407,11 +419,11 @@ p.services-paragraph {
     gap: 10px; /* Space between grid items */
     border: 2px solid black; /* Black border around the grid */
     border-radius: 8px; /* Rounded corners for the border */
-    padding: 5px; /* Padding inside the grid container */
+    padding: 15px; /* Padding inside the grid container */
     height: auto; /* Adjust height based on content */
     grid-auto-rows: auto; /* Rows grow based on content */
     margin-top: 10px;
-    background-color: darkgrey;
+    background-color: darkblue;
 }
 
 /* Styles for individual grid items */
@@ -496,4 +508,6 @@ p.services-paragraph {
     list-style: none; /* Removes default bullet points from list */
     align-items: center; /* Centers items vertically */
 }
+
+/*/////////////////////////////////////*/
 
