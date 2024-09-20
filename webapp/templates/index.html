@@ -57,8 +57,8 @@
 	</nav>
 
 	<div class="container-section">
-		<div class="box1">
-			<h1 class="centered-text" id="about">
+		<div class="box1" id="about">
+			<h1 class="centered-text">
 				About Me
 			</h1>
 			<p class="profile-paragraph">
@@ -130,10 +130,10 @@
 		<div class="contact-section" id="contact">
 		    <div class="footer-heading">Contact Info</div>
 		    <div class="contact-text">
-		        <p>Email</p>
-		        <a class="email-text" href="email@email.com" target="_blank">email@email.com</a>
+		        <p>Email :</p>
+		        <a class="email-text">email@email.com</a>
 		        <br>
-		        <p>Social Media</p>
+		        <p>Social Media :</p>
 		        <div class="social-links">
 		            <ul>
 				        <li class="instagram">
@@ -169,7 +169,13 @@
 		    modal.classList.add('active'); // Show the modal
 
 		    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth; // Calculate scrollbar width
+
 		    document.body.style.paddingRight = `${scrollbarWidth}px`; // Add padding to offset scrollbar disappearance
+		    
+		    // Add padding to navbar
+		    const navbar = document.querySelector('.navbar');
+		    navbar.style.paddingRight = `${scrollbarWidth}px`; // Apply padding to navbar
+
 		    document.body.style.overflow = 'hidden'; // Disable scroll
 		}
 
@@ -179,7 +185,12 @@
 
 		    document.body.style.overflow = ''; // Re-enable scroll
 		    document.body.style.paddingRight = ''; // Remove padding
+		    
+		    // Remove padding from navbar
+		    const navbar = document.querySelector('.navbar');
+		    navbar.style.paddingRight = ''; // Reset navbar padding
 		}
+
 
 
 
