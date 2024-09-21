@@ -101,6 +101,14 @@ html {
 
 }
 
+.nav-social {
+    display: inline-flex;
+    flex-direction: row;
+    border: 1px solid white;
+    border-radius: 4px;
+    justify-content: center;
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -337,13 +345,7 @@ p.services-paragraph {
 }
 
 
-/* Styles for boxes with flex container */
-.box1, .box4 {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Align items vertically */
-    justify-content: center; /* Center items vertically */
-    text-align: center; /* Center text horizontally */
-}
+
 
 
 
@@ -405,8 +407,8 @@ p.services-paragraph {
 
 .modal-close {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 25px;
+    right: 25px;
     font-size: 2rem;
     color: white;
     cursor: pointer;
