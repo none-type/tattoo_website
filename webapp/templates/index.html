@@ -162,35 +162,39 @@
 		    });
 		});
 
+		// Disable scroll without hiding the scrollbar
+		function disableScroll() {
+		    window.addEventListener('scroll', preventScroll, { passive: false });
+		    window.addEventListener('wheel', preventScroll, { passive: false });
+		    window.addEventListener('touchmove', preventScroll, { passive: false });
+		}
+
+		function preventScroll(e) {
+		    e.preventDefault();
+		    e.stopPropagation();
+		    return false;
+		}
+
+		// Enable scroll when modal is closed
+		function enableScroll() {
+		    window.removeEventListener('scroll', preventScroll);
+		    window.removeEventListener('wheel', preventScroll);
+		    window.removeEventListener('touchmove', preventScroll);
+		}
+
 		function openModal(imageSrc) {
 		    const modal = document.getElementById('modal');
 		    const modalImage = document.getElementById('modal-image');
 		    modalImage.src = imageSrc;
 		    modal.classList.add('active'); // Show the modal
-
-		    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth; // Calculate scrollbar width
-
-		    document.body.style.paddingRight = `${scrollbarWidth}px`; // Add padding to offset scrollbar disappearance
-		    
-		    // Add padding to navbar
-		    const navbar = document.querySelector('.navbar');
-		    navbar.style.paddingRight = `${scrollbarWidth}px`; // Apply padding to navbar
-
-		    document.body.style.overflow = 'hidden'; // Disable scroll
+		    disableScroll(); // Lock scrolling
 		}
 
 		function closeModal() {
 		    const modal = document.getElementById('modal');
 		    modal.classList.remove('active'); // Hide the modal
-
-		    document.body.style.overflow = ''; // Re-enable scroll
-		    document.body.style.paddingRight = ''; // Remove padding
-		    
-		    // Remove padding from navbar
-		    const navbar = document.querySelector('.navbar');
-		    navbar.style.paddingRight = ''; // Reset navbar padding
+		    enableScroll(); // Unlock scrolling
 		}
-
 
 
 
