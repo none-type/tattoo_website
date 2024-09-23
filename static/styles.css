@@ -29,7 +29,9 @@ html {
 }
 
 
-/*////////////////////////////////////////////////////// */
+
+
+/* navbar */
 
 .navbar {
     display: flex; /* Flexbox for aligning items inside the navbar */
@@ -47,23 +49,39 @@ html {
     align-items: center; /* Vertically centers the navbar items */
     min-height: 100px;
     border-bottom: 1px solid white;
-    flex-grow: 0;
-    flex-shrink: 0;
 }
 
 .name-head {
     display: flex;
+    justify-content: center;
+    align-items: center;
     white-space: nowrap; /* Prevents the text from wrapping */
     margin-left: 2%; /* Adds space to the left of the text */
     margin-right: 2%;
     color: white; /* White text color */
-    width: 200px; /* Fixed width */
-    height: 50px; /* Fixed height */
 }
 
 .name-head h1 {
-    display: flex;
-    font-size: 3vw;
+    font-size: 50px; /* Adjusted to provide better scaling */
+    text-align: center; /* Ensure text is centered without using flex */   
+}
+
+@media (max-width :1100px) {
+    .name-head h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width :900px) {
+    .name-head h1 {
+        font-size: 35px;
+    }
+}
+
+@media (max-width :600px) {
+    .name-head h1 {
+        font-size: 30px;
+    }
 }
 
 
@@ -104,7 +122,7 @@ html {
 .nav-social {
     display: inline-flex;
     flex-direction: row;
-    border: 1px solid white;
+    border: 1px solid black;
     border-radius: 4px;
     justify-content: center;
 }
@@ -123,6 +141,9 @@ html {
     background-color: white;
     margin: 4px;
 }
+
+
+/* navbar media query */
 
 @media (max-width: 768px) {
 
@@ -164,8 +185,9 @@ html {
 }
 
 
-/*////////////////////////////////////////////////////// */
 
+
+/* main content container */
 
 .container-section {
     height: auto; /* Adjust height based on content */
@@ -187,7 +209,11 @@ html {
     padding-bottom: 150px;
 }
 
-/*////////////////////////*/
+
+
+
+
+
 /* about section */
 
 .box1 {
@@ -198,7 +224,6 @@ html {
     aspect-ratio: 16 / 9; /* Maintains a 16:9 aspect ratio */
     background-color: rgba(50, 50, 50, 1.0);
     overflow: hidden; /* In case you have content overflow */
-    /* margin: 0 auto; /* Centers the box */
     border: 2px solid white;
     border-radius: 15px;
 }
@@ -211,10 +236,20 @@ html {
 }
 
 .profile-paragraph {
-    font-size: 1vw; /* Text size is 5% of the viewport width */
+    
     text-align: center; /* Centers text */
     padding: 10px; /* Padding inside the text container */
     min-width: 200px; /* Minimum width for the text block */
+}
+
+.centered-text {
+    color: white;
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Centers items horizontally */
+    align-items: flex-start; /* Aligns items at the top */
+    height: 10%; /* Set height relative to parent */
+    text-align: center; /* Center text horizontally */
+    font-size: 30px; /* Font size */
 }
 
 p.profile-paragraph {
@@ -226,12 +261,31 @@ p.profile-paragraph {
     border-top: solid 1px black; /* Top border */
     border-bottom: solid 1px black; /* Bottom border */
     padding: 5px; /* Padding inside the paragraph */
-    margin-top: 20px;
-    font-size: 1vw; /* Text size is 5% of the viewport width */
+    font-size: 20px; /* Text size is 5% of the viewport width */
+    margin-top: 0px;
+}
+
+@media (max-width :1100px) {
+    p.profile-paragraph {
+        font-size: 20px;
+    }
+}
+
+@media (max-width :900px) {
+    p.profile-paragraph {
+        font-size: 15px;
+    }
+}
+
+@media (max-width :600px) {
+    p.profile-paragraph {
+        font-size: 10px;
+    }
 }
 
 
-/*////////////////////////*/
+
+
 /* profile image */
 
 .box2 {
@@ -265,22 +319,14 @@ p.profile-paragraph {
     border-radius: inherit; /* Match border-radius of the container */
 }
 
-/*////////////////////////*/
-
-.centered-text {
-    color: white;
-    display: flex; /* Flexbox layout */
-    justify-content: center; /* Centers items horizontally */
-    align-items: flex-start; /* Aligns items at the top */
-    height: 10%; /* Set height relative to parent */
-    text-align: center; /* Center text horizontally */
-    font-size: 30px; /* Font size */
-}
 
 
 
 
-/*////////////////////////*/
+
+
+
+
 /* Styles for the video  */
 
 .box3 {
@@ -316,7 +362,12 @@ p.profile-paragraph {
     border-radius: inherit; /* Match border-radius of the container */
 }
 
-/*////////////////////////*/
+
+
+
+
+
+
 
 /* services */
 
@@ -328,7 +379,6 @@ p.profile-paragraph {
     aspect-ratio: 16 / 9; /* Maintains a 16:9 aspect ratio */
     background-color: rgba(50, 50, 50, 1.0);
     overflow: hidden; /* In case you have content overflow */
-    /*margin: 0 auto; /* Centers the box */
     border: 2px solid white;
     border-radius: 15px;
 }
@@ -337,11 +387,12 @@ p.services-paragraph {
     color: white;
     align-items: flex-start; /* Aligns items at the top */
     justify-content: center; /* Centers items vertically */
-    font-size: 1vw; /* Text size is 5% of the viewport width */
+    font-size: 20px; /* Text size is 5% of the viewport width */
     font-family: sans-serif; /* Font style */
     border-top: solid 1px black; /* Top border */
     border-bottom: solid 1px black; /* Bottom border */
     padding: 5px; /* Padding inside the paragraph */
+    margin-top: 0px;
 }
 
 
@@ -349,31 +400,11 @@ p.services-paragraph {
 
 
 
-/*////////////////////////*/
-
-.contact-section {
-    position: relative; /* Allows child elements to be positioned */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(152, 251, 152, 0.5)); /* Gradient effect */
-    backdrop-filter: blur(5px); /* Adds a blur effect to background */
-    width: 100%; /* Full width */
-    height: auto; /* Adjust height based on content */
-    padding: 20px; /* Padding inside the section */
-    border-top: 1px solid white;
-}
-
-.contact-text, p {
-    font-size: 20px; /* Font size */
-    font-family: sans-serif; /* Font style */
-    color: white;
-    padding: 5px; /* Padding inside the text block */
-    text-align: center; /* Centers text horizontally */
-    margin-top: 20px; /* Adds space at the top */
-}
 
 
 
-/*////////////////////////////////////////////////////// */
+
+
 
 /* Gallery Section */
 
@@ -415,9 +446,6 @@ p.services-paragraph {
     z-index: 1003;
 }
 
-
-
-/* Styles for the gallery section */
 .gallery-section {
     background-color: rgba(50, 50, 50, 1.0); /* White background */
     padding: 10px; /* Padding inside the section */
@@ -473,9 +501,12 @@ p.services-paragraph {
 
 
 
+
+
+
 /* Footer-Contact section */
 
-/* Styles for the footer heading */
+
 .footer-heading {
     font-size: 30px; /* Font size for heading */
     font-family: "Lobster", sans-serif; /* Font family for heading */
@@ -484,11 +515,29 @@ p.services-paragraph {
     text-align: center; /* Center text horizontally */
 }
 
-.email-text {
-    font-family: sans-serif;
-    font-size: 20px;
-    color: hotpink;
+
+
+.contact-section {
+    position: relative; /* Allows child elements to be positioned */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(152, 251, 152, 0.5)); /* Gradient effect */
+    backdrop-filter: blur(5px); /* Adds a blur effect to background */
+    width: 100%; /* Full width */
+    height: auto; /* Adjust height based on content */
+    padding: 20px; /* Padding inside the section */
+    border-top: 1px solid white;
 }
+
+.contact-text, p {
+    font-size: 20px; /* Font size */
+    font-family: sans-serif; /* Font style */
+    color: white;
+    padding: 5px; /* Padding inside the text block */
+    text-align: center; /* Centers text horizontally */
+    margin-top: 20px; /* Adds space at the top */
+}
+
+
 
 
 
@@ -521,13 +570,54 @@ p.services-paragraph {
     font-size: 24px;
 }
 
-.social-links {
-    display: flex; /* Flexbox to align items horizontally */
-    justify-content: center; /* Aligns items to the left */
-    list-style: none; /* Removes default bullet points from list */
-    align-items: center; /* Centers items vertically */
+
+.email-text {
+    color: hotpink;
 }
 
-/*/////////////////////////////////////*/
+@media (max-width: 1100px) {
+    p.services-paragraph {
+        font-size: 20px;
+    } 
+    h1.centered-text {
+        font-size: 30px;
+    }
+    h1.footer-heading {
+        font-size: 30px;
+    }
 
+    .contact-text , p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    p.services-paragraph {
+        font-size: 15px;
+    } 
+    h1.centered-text {
+        font-size: 20px;
+    }
+    h1.footer-heading {
+        font-size: 20px;
+    }
+    .contact-text , p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    p.services-paragraph {
+        font-size: 10px;
+    } 
+    h1.centered-text {
+        font-size: 15px;
+    }
+    h1.footer-heading {
+        font-size: 15px;
+    }
+    .contact-text , p {
+        font-size: 10px;
+    }
+}
 

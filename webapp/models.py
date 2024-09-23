@@ -27,7 +27,7 @@ class GalleryImage(models.Model):
         return self.title or f"Image {self.id}"
 
 class AboutMe(models.Model):
-    content = models.TextField()
+    content = models.CharField(max_length=500)  # Adjust the max_length as needed
 
     class Meta:
         verbose_name = "About Me Text"
@@ -37,7 +37,7 @@ class AboutMe(models.Model):
         return 'About Me Section'
 
 class ServicesText(models.Model):
-    content = models.TextField()
+    content = models.CharField(max_length=500)  # Adjust the max_length as needed
 
     class Meta:
         verbose_name = "Services Text"
