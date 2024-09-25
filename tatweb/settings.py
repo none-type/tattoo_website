@@ -21,10 +21,23 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-9w=it&v+2#c$1inf5lwo@8a&v2*0_u8ha%x@q-rsbv6ky#2tg1'
+SECRET_KEY = 'mLfzamO0kRaesa82zc-1t7nkipdQA5r5HRkFC5Ntd3Qy-nHRENAAv9ea4OJ47QMq_tY'
+
+#SECURE_HSTS_SECONDS = 31536000  # 1 year.  Tells browsers to only interact with your site over HTTPS.
+#SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Also apply to subdomains
+#SECURE_HSTS_PRELOAD = True  # Preload HSTS in browsers
+
+#SECURE_SSL_REDIRECT = True # if not set to True, which means your site will allow HTTP traffic instead of redirecting it to HTTPS.
+
+#SESSION_COOKIE_SECURE = True # If session cookies are sent over HTTP, they can be intercepted by attackers, allowing them to hijack user sessions.
+
+#CSRF_COOKIE_SECURE = True #  If the CSRF token is sent over HTTP, it can be intercepted by attackers. This makes it easier for them to carry out CSRF attacks.
+
+#SECURE_CONTENT_TYPE_NOSNIFF = True
+#X_FRAME_OPTIONS = 'DENY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True # can expose sensitive data in a production environment.
 
 ALLOWED_HOSTS = []
 
