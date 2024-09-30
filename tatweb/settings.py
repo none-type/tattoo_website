@@ -20,6 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
+# ////////////////////////SECURITY////////////////////////////
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'mLfzamO0kRaesa82zc-1t7nkipdQA5r5HRkFC5Ntd3Qy-nHRENAAv9ea4OJ47QMq_tY'
 
@@ -33,13 +34,45 @@ SECRET_KEY = 'mLfzamO0kRaesa82zc-1t7nkipdQA5r5HRkFC5Ntd3Qy-nHRENAAv9ea4OJ47QMq_t
 
 #CSRF_COOKIE_SECURE = True #  If the CSRF token is sent over HTTP, it can be intercepted by attackers. This makes it easier for them to carry out CSRF attacks.
 
+#SECURE_BROWSER_XSS_FILTER = True
 #SECURE_CONTENT_TYPE_NOSNIFF = True
 #X_FRAME_OPTIONS = 'DENY'
+
+#  //////////////////////////CSP///////////////////////////////
+
+CSP_DEFAULT_SRC = ("'self'",)  # Allow resources from the same origin
+CSP_SCRIPT_SRC = (
+    "'self'", 
+    "'unsafe-inline'",  # Allow inline scripts (consider avoiding if possible)
+    "https://cdnjs.cloudflare.com"  # For Font Awesome
+)
+CSP_STYLE_SRC = (
+    "'self'", 
+    "'unsafe-inline'",  # Allow inline styles (consider avoiding if possible)
+    "https://fonts.googleapis.com",  # For Google Fonts
+    "https://cdnjs.cloudflare.com"  # For external styles
+)
+CSP_IMG_SRC = (
+    "'self'", 
+    "data:",  # Allow data URIs for images if you use them
+)
+CSP_FONT_SRC = (
+    "'self'", 
+    "https://fonts.gstatic.com",  # For Google Fonts
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/",
+)
+CSP_CONNECT_SRC = ("'self'",)  # Allow connections to the same origin (for APIs)
+CSP_FRAME_SRC = ("'none'",)  # Disallow frames
+
+#CSP_REPORT_URI = '/csp-report/'  # Define an endpoint to handle CSP reports
+
+# ////////////////////////////////////////////////////////////
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True # can expose sensitive data in a production environment.
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -52,6 +85,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'webapp',
+    'csp',
 ]
 
 MIDDLEWARE = [
@@ -62,6 +96,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'csp.middleware.CSPMiddleware',
 ]
 
 ROOT_URLCONF = 'tatweb.urls'
@@ -132,6 +167,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
